@@ -16,6 +16,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_protect
 
+import requests
 
 # Create your views here.
 @csrf_protect
@@ -101,7 +102,17 @@ def login(request):
         pass
       auth.login(request, user)
       messages.success(request, 'You are now logged in.')
-      return redirect('dashboard')
+      url = request.META.get('HTTP_REFERER') # store url into url
+      try:
+        query = requests.utils.urlparse(url).query
+        # next = /cart/checkout/
+        params = dict(x.split('=') for x in query.split('&'))
+        if 'next' in params:
+          nextPage = params['next']
+          return redirect(nextPage)
+        return redirect('dashboard')
+      except:
+        pass
     else:
       messages.error(request, 'Invalid login credentials')
       return redirect('login')
