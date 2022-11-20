@@ -102,7 +102,7 @@ def login(request):
         pass
       auth.login(request, user)
       messages.success(request, 'You are now logged in.')
-      url = request.META.get('HTTP_REFERER') # store url into url
+      url = request.META.get('HTTP_REFERER') # store previous url where the user came from into url
       try:
         query = requests.utils.urlparse(url).query
         # next = /cart/checkout/
@@ -110,9 +110,8 @@ def login(request):
         if 'next' in params:
           nextPage = params['next']
           return redirect(nextPage)
-        return redirect('dashboard')
       except:
-        pass
+        return redirect('dashboard')
     else:
       messages.error(request, 'Invalid login credentials')
       return redirect('login')
