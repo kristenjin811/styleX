@@ -19,36 +19,36 @@ python manage.py runserver
 <img src="static/images/readme/checkout.png" alt="Alt text" title="checkout">
 
 
-## All API Endpoints runs on port 8000
+## All endpoints runs on port 8000
 ### The accounts app
 URLS to access the accounts app:
 
 
 ### The accounts app
 URLS to access the accounts app:
-- http://localhost:8000/api/accounts/
-- http://localhost:8000/api/accounts/register/
-- http://localhost:8000/api/accounts/login/
-- http://localhost:8000/api/accounts/logout/
-- http://localhost:8000/api/accounts/dashboard/
-- http://localhost:8000/api/accounts/forgotPassword/
-- http://localhost:8000/api/accounts/activate/<uidb64>/<token>/
-- http://localhost:8000/api/resetPassword_validate/<uidb64>/<token>/
-- http://localhost:8000/api/resetPassword/
+- http://localhost:8000/accounts/
+- http://localhost:8000/accounts/register/
+- http://localhost:8000/accounts/login/
+- http://localhost:8000/accounts/logout/
+- http://localhost:8000/accounts/dashboard/
+- http://localhost:8000/accounts/forgotPassword/
+- http://localhost:8000/accounts/activate/<uidb64>/<token>/
+- http://localhost:8000/resetPassword_validate/<uidb64>/<token>/
+- http://localhost:8000/resetPassword/
 
 
 ### The carts app
 URLS to access the carts app:
-- http://localhost:8000/api/cart/
-- http://localhost:8000/api/cart/add_cart/<int:product_id>/
-- http://localhost:8000/api/cart/remove_cart/<int:product_id>/<int:cart_item_id>/
-- http://localhost:8000/api/cart/remove_cart_item/<int:product_id>/<int:cart_item_id>/
-- http://localhost:8000/api/cart/checkout/
+- http://localhost:8000/cart/
+- http://localhost:8000/cart/add_cart/<int:product_id>/
+- http://localhost:8000/cart/remove_cart/<int:product_id>/<int:cart_item_id>/
+- http://localhost:8000/cart/remove_cart_item/<int:product_id>/<int:cart_item_id>/
+- http://localhost:8000/cart/checkout/
 
 
 ### The store app
 URLS to access the store app:
-- http://localhost:8000/api/store/
-- http://localhost:8000/api/store/category/<slug:category_slug>/
-- http://localhost:8000/api/store/category/<slug:category_slug>/<slug:product_slug>/
-- http://localhost:8000/api/store/search/
+- http://localhost:8000/store/
+- http://localhost:8000/store/category/<slug:category_slug>/
+- http://localhost:8000/store/category/<slug:category_slug>/<slug:product_slug>/
+- http://localhost:8000/store/search/
