@@ -32,7 +32,7 @@ URLS to access the accounts app:
 - http://localhost:8000/accounts/logout/
 - http://localhost:8000/accounts/dashboard/
 - http://localhost:8000/accounts/forgotPassword/
-- http://localhost:8000/accounts/activate/<uidb64>/<token>/
+- http://localhost:8000/accounts/activate/{uidb64}/{token}/
 - http://localhost:8000/resetPassword_validate/<uidb64>/<token>/
 - http://localhost:8000/resetPassword/
 
