@@ -52,3 +52,81 @@ URLS to access the store app:
 - http://localhost:8000/store/category/{slug:category_slug}/
 - http://localhost:8000/store/category/{slug:category_slug}/{slug:product_slug}/
 - http://localhost:8000/store/search/
+
+
+## Data format
+### Data format of order submission from front-end to back-end:
+```
+Object {
+  "id": "???",
+  "intent": "CAPTURE",
+  "status": "COMPLETED",
+  "purchase_units": [
+    {
+      "reference_id": "default",
+      "amount": {
+        "currency_code": "USD",
+        "value": "???"
+      },
+      "payee": {
+        "email_address": "???",
+        "merchant_id": "???"
+      },
+      "shipping": {
+        "name": {
+          "full_name": "???"
+        },
+        "address": {
+          "address_line_1": "???",
+          "admin_area_2": "???",
+          "admin_area_1": "???",
+          "postal_code": "???",
+          "country_code": "???"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "id": "???",
+            "status": "COMPLETED",
+            "amount": {
+              "currency_code": "USD",
+              "value": "???"
+            },
+            "final_capture": true,
+            "seller_protection": {
+              "status": "ELIGIBLE",
+              "dispute_categories": [
+                "ITEM_NOT_RECEIVED",
+                "UNAUTHORIZED_TRANSACTION"
+              ]
+            },
+            "create_time": "???",
+            "update_time": "???"
+          }
+        ]
+      }
+    }
+  ],
+  "payer": {
+    "name": {
+      "given_name": "???",
+      "surname": "???"
+    },
+    "email_address": "???",
+    "payer_id": "???",
+    "address": {
+      "country_code": "???"
+    }
+  },
+  "create_time": "???",
+  "update_time": "???",
+  "links": [
+    {
+      "href": "???",
+      "rel": "self",
+      "method": "GET"
+    }
+  ]
+}
+```
