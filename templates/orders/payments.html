@@ -140,6 +140,7 @@
   var csrftoken = getCookie('csrftoken')
   var payment_method = 'PayPal'
   var url = "{% url 'payments' %}"
+  var redirect_url = "{% url 'order_complete' %}"
 
   paypal.Buttons({
     style: {
@@ -181,10 +182,13 @@
             status: orderData.status,
           }),
         })
-        // .then(response => response.json())
-        // .then(data => {
-        //  console.log(data)
-        // })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success: ', data);
+          console.log('Transaction Completed.');
+          // redirect to the order_complete url + order number + payment id
+          window.location.href = redirect_url + '?order_number=' + data.order_number + '&payment_id=' + data.transID;
+        })
       }
       // Replace the above to show a success message within this page, e.g.
       // const element = document.getElementById('paypal-button-container');
