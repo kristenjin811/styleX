@@ -161,12 +161,12 @@ sup {
 }
 
 a {
-  color: #3167eb;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #1244bd;
+  color: #747373;
   text-decoration: underline;
 }
 
@@ -5140,11 +5140,10 @@ a.badge-gray-light:focus, a.badge-gray-light.focus {
 }
 .list-group-item.active {
   z-index: 2;
-  color: #fff;
-  background-color: #3167eb;
-  border-color: #3167eb;
+  background-color: grey;
+  border-color: grey;
+  color: black;
 }
-
 .list-group-horizontal {
   flex-direction: row;
 }
