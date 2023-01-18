@@ -20,3 +20,16 @@
 		</section>
 	</div><!-- //container -->
 </footer>
+<!--=========================Footer End===========================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){ // when the document is ready, this is the syntax of jquerry
+		$('.thumb a').click(function(e) { // when the click function happens to thumb class a tag,
+			e.preventDefault(); // default is when click on image, the image pop in a whole window
+			$('.mainImage img'). attr('src', $(this).attr("href")); // open image in the mainImage container
+		})
+	})
+</script>
+
+</body>
+</html>
